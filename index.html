@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>google map api</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" type="image/x-icon" href="img/icon.ico">
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlnBXptn-Zoq7AevGcsPj3XjuuKnnBx7g"></script>
+		<link rel="stylesheet" href="./css/main.css">
+	</head>
+	<body>
+		<div class="main">
+			<div class="ui top fixed menu">
+				<div class="item">
+					<img src="img/icon.ico">
+				</div>
+				<a class="item">短講地圖</a>
+				<a class="item">申請方式</a>
+				<a class="item">聯絡我們</a>
+			</div>
+			<div class="ui stackable grid" id="map_top">
+				<div class="two wide column"></div>
+				<div class="eight wide column">
+					<div class="ui segment google_map">
+						<div id="map-canvas"></div>
+					</div>
+				</div>
+				<div class="four wide column" id="detail_text">
+					<div class="ui grid">
+						<div class="four wide column">主題</div>
+						<div class="twelve wide column" id="talk_topics">None</div>
+						<div class="four wide column">講者</div>
+						<div class="twelve wide column" id="talk_speaker">None</div>
+						<div class="four wide column">時間</div>
+						<div class="twelve wide column" id="talk_time">None</div>
+						<div class="four wide column">地點</div>
+						<div class="twelve wide column" id="talk_location">None</div>
+						<div class="four wide column">介紹</div>
+						<div class="twelve wide column" id="talk_detail">None</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="load_img">
+			<div class="text-vertical-center">
+				<img src="img/loading.gif">
+			</div>
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+		<script type="text/javascript" src="./js/main.js"></script>
+	</body>
+</html>

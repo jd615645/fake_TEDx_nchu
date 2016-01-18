@@ -1,8 +1,8 @@
 jQuery(document).ready(function($) {
 	function initialize() {
 		var api_url = "https://script.google.com/macros/s/AKfycbwy6WFg_iyQFNWgcsS8G5u6AbPcm870eK_PPTYmJprENct7Mye4/exec"
+
 		$.get(api_url, "get", function(json){
-			// console.log(json.output[1]);
 			var input = json.output;
 			var markers =[];
 			var map = new google.maps.Map(
@@ -28,7 +28,9 @@ jQuery(document).ready(function($) {
 					speaker: input_data.speaker,
 					time: input_data.time,
 					location: input_data.location,
-					detail: input_data.detail
+					detail: input_data.detail,
+					video_text: input_data.video_text,
+					video_id: input_data.video_id,
 				});
 			});
 			markers.forEach(function(marker, i){
@@ -48,6 +50,8 @@ jQuery(document).ready(function($) {
 				$('#talk_time').text(talk_details[i].time);
 				$('#talk_location').text(talk_details[i].location);
 				$('#talk_detail').text(talk_details[i].detail);
+				$('#talk_video_text').text(talk_details[i].video_text);
+				$('#talk_video').attr('src', 'https://www.youtube.com/embed/' + talk_details[i].video_id + '?rel=0');
 			}
 			detail_show(0);
 		});
